@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box for os</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <span class="close"> &times; </span>
+        <img src="logo.png" alt="">
+        <div class="text">
+            <h1>apple store</h1>
+             <p>apple store for all oS</p>
+             <!-- <p>iphone ipad mac</p> -->
+        </div>
+        
+        <button class="download">download</button>
+        
+    </div>
+
+
+    <script> 
+        var container = document.querySelector(".container");
+        var user = navigator.userAgent.toLocaleLowerCase();
+        if(user.includes("os")){
+            setTimeout(()=>{
+                container.style.display="flex";
+            },3000)
+            document.querySelector(".download").addEventListener("click",()=>{
+                window.open("https://developer.apple.com/ios/","_blank")
+            })
+        }else{
+     
+                container.style.display = "none";
+                }
+        
+               
+                var close = document.querySelector(".close");
+                close.addEventListener("click", ()=>{
+                    container.style.display = "none";
+                });
+        
+        </script>
+</body>
+</html>
